@@ -1,0 +1,20 @@
+<div class="form-inline container-converter">
+<h4>CONVERTER</h4>
+<br>
+<input class="form-control" placeholder="Enter Amount" type="text" ng-model="amount" ng-change="update()"/>&nbsp;
+<br>
+<br>
+<select class="form-control" ng-model="from" ng-change="update()">
+  <option ng-repeat="currency in allCurrencies" ng-selected="{{currency == usd}}">{{currency}}</option>
+
+</select>
+<br>
+<a id="interchange" ng-click="change()"><img src="./images/interchange.png" height="26" width="26"/></a>
+<br>
+<select  class="form-control" ng-model="to" ng-change="update()">
+  <option ng-repeat="currency in allCurrencies" ng-selected="{{currency == euro}}">{{currency}}</option>
+
+</select>
+<br>
+<br>
+<span class="value" ng-bind="value" ng-if="amount.length>0"></span></div>

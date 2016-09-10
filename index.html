@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Money Guru</title>
+  <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+  <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+   
+    <meta http-equiv="Content-type" value="text/html; charset=utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    
+    <script src="js/app_jQuery.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
+    <script type="text/javascript" src="js/app.js" charset="iso-8859"></script>
+  
+
+    
+</head>
+
+<body ng-app="MoneyGuru" class="animated fadeIn">
+  <nav class="clearfix">
+    <ul class="clearfix">
+      <li><a href="http://users.metropolia.fi/~kararha/currency/"><img src="images/refresh.png" width="25" height="25"/>Refresh</a></li>
+    </ul>
+  </nav>
+ 
+  <div ng-controller="MainCtrl">
+ <div class="result">
+   <h1 align="center">MONEY GURU</h1>
+   <span id="target"></span>
+<br>
+<br>
+<converter></converter>
+<br>
+<br>
+  <div class="container-currency"> <eurorate info="euroex"></eurorate><usdrate info="usdex"></usdrate><gbprate info="gbpex"></gbprate><cadrate info="cadex"></cadrate><audrate info="audex"></audrate></div>
+
+
+
+</div>
+</div>
+<script src="services/allcurrency.js"></script>
+<script src="services/euroexchange.js"></script>
+<script src="services/usdexchange.js"></script>
+<script src="services/gbpexchange.js"></script>
+<script src="services/cadexchange.js"></script>
+<script src="services/audexchange.js"></script>
+<script src="directives/conversion_euro.js"></script>
+<script src="directives/conversion_usd.js"></script>
+<script src="directives/conversion_gbp.js"></script>
+<script src="directives/conversion_cad.js"></script>
+<script src="directives/conversion_aud.js"></script>
+<script src="directives/currency_converter.js"></script>
+    <!-- Controllers -->
+    <script src="controllers/MainCtrl.js"></script>
+
+
+
+</body>
+<br>
+<br>
+<footer>&copy; Money Guru 2016</footer>
+</html>

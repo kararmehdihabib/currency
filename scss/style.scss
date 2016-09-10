@@ -1,0 +1,237 @@
+@import url(https://fonts.googleapis.com/css?family=Nothing+You+Could+Do);
+@import url(https://fonts.googleapis.com/css?family=Freckle+Face);
+//Variables
+$dark-orange: #994d00;
+$skin-color: #ffe6cc;
+$h1-size: 30pt;
+$font-regular: 'Freckle Face', cursive;
+$currency-font: 'Calibri';
+$nav-footer-font: 'Nothing You Could Do', cursive;
+$font-color:black;
+$border: 50px 50px;
+$opacity:0.6;
+$opacity-after:0.9;
+$transition-dur: 1s;
+$opacity-hover-interchange: 0.5;
+$regular-container-properties: auto,auto,center,30px,white,$opacity,$border,15px;
+$footer-bg:#662900;
+$footer-nav-font-color: white;
+//mixins
+@mixin regular-container($width, $height, $text-align, $padding, $bg, $opac, $border-rad, $margin) {
+   max-width: $width;
+  max-height:$height;
+  text-align: $text-align;
+  padding: $padding;
+  background: $bg;
+  opacity:$opac;
+  border-radius: $border-rad;
+  margin: $margin;
+}
+@mixin hover($transparent,$transition-duration){
+  &:hover{
+    opacity: $transparent;
+    transition: $transition-duration;
+  }
+}
+@mixin hover-interchange($transparent,$transition-duration){
+  &:hover{
+    opacity: $transparent;
+    transition: $transition-duration;
+  }
+}
+//sass
+body{
+	background-color: $dark-orange !important;
+   
+}
+
+h1{
+	 font-family: $font-regular !important;
+  color:$skin-color !important;
+  font-size: $h1-size !important;
+}
+
+.result
+{
+  max-width: auto;
+  max-height:auto;
+  text-align: center;
+  padding-bottom: 20px;
+  background: none;
+  border-radius: 50px 0px;
+  margin: 50px;
+  font-family: $font-regular;
+  color: $font-color;
+
+}
+
+.container-currency
+{
+  @include regular-container($regular-container-properties...);
+  @include hover($opacity-after,$transition-dur);
+  .container-each{
+  display: inline-block;
+  max-width: auto;
+  max-height:auto;
+  text-align: left;
+  padding: 30px;
+  background: white;
+  border-radius: 50px 50px;
+  margin: 1px;
+  font-family:$currency-font;
+  }
+  h1{
+  color: $font-color !important;
+  text-align:center;
+}
+}
+.container-converter
+{ 
+@include regular-container($regular-container-properties...);
+ @include hover($opacity-after,$transition-dur);
+  .value{
+  font-size: 16pt;
+  transition:$transition-dur;
+  color: $font-color;
+}
+#interchange{
+  text-decoration:none;
+  cursor:pointer;
+@include hover($opacity-hover-interchange,$transition-dur);
+}
+.form-control{
+  width:220px !important;
+  display:inline;
+  align:center;
+}
+}
+
+
+footer{
+		position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:$footer-bg; 
+  border:none;
+  color:$footer-nav-font-color;
+	font-family: $nav-footer-font;
+	font-size:15px;
+	text-align:center;
+}
+
+nav {
+  height: 40px;
+  width: auto;
+  background: #662900;
+  font-size: 11pt;
+  font-family: $nav-footer-font;
+  font-weight: bold;
+  position: relative;
+  border-bottom: 2px solid #662900;
+  ul {
+    padding: 0;
+    margin: 0 auto;
+    height: 40px;
+  }
+  li {
+    display: inline;
+    float: left;
+  }
+  a {
+    color: $footer-nav-font-color;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 40px;
+    
+  }
+  li {
+    a {
+      border:none;
+    
+    }
+    &:last-child a {
+      border-right: 0;
+    }
+  }
+  a {
+    &:hover, &:active {
+      background-color:  #ffd1b3;
+      color: #fff;
+      transition:$transition-dur;
+    }
+   
+  }
+}
+
+
+/*Styles for screen 600px and lower*/
+@media screen and (max-width: 600px) {
+	.result
+{
+  max-width: auto;
+  max-height:auto;
+  text-align: center;
+  padding: 0px;
+  background: none;
+  border-radius: 50px 0px;
+  margin-top: 40px;
+
+}
+}
+
+@media only screen and (max-width: 768px) {
+.result
+{
+  max-width: auto;
+  max-height:auto;
+  text-align: center;
+  padding: 0px;
+  background: none;
+  border-radius: 50px 0px;
+  margin: 80px;
+
+}	
+}
+@media only screen and (max-width: 640px) {
+.result
+{
+  max-width: auto;
+  max-height:auto;
+  text-align: center;
+  padding: 0px;
+  background: none;
+  border-radius: 50px 0px;
+  margin: 10px;
+
+}	
+}
+@media only screen and (max-width: 360px) {
+.result
+{
+  max-width: auto;
+  max-height:auto;
+  text-align: center;
+  padding: 0px;
+  background: none;
+  border-radius: 50px 0px;
+  margin: 4px;
+
+}
+}
+@media only screen and (width: 900px) {
+.result
+{
+  max-width: auto;
+  max-height:auto;
+  text-align: center;
+  padding: 0px;
+  background: none;
+  border-radius: 50px 0px;
+  margin: 130px;
+
+}	
+}
