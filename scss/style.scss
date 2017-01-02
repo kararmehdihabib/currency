@@ -1,56 +1,19 @@
 @import url(https://fonts.googleapis.com/css?family=Nothing+You+Could+Do);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
 @import url(https://fonts.googleapis.com/css?family=Freckle+Face);
-//Variables
-$dark-orange: #994d00;
-$skin-color: #ffe6cc;
-$h1-size: 30pt;
-$font-regular: 'Freckle Face', cursive;
-$currency-font: 'Calibri';
-$nav-footer-font: 'Nothing You Could Do', cursive;
-$font-color:black;
-$border: 50px 50px;
-$opacity:0.6;
-$opacity-after:0.9;
-$transition-dur: 1s;
-$opacity-hover-interchange: 0.5;
-$regular-container-properties: auto,auto,center,30px,white,$opacity,$border,15px;
-$footer-bg:#662900;
-$footer-nav-font-color: white;
-//mixins
-@mixin regular-container($width, $height, $text-align, $padding, $bg, $opac, $border-rad, $margin) {
-   max-width: $width;
-  max-height:$height;
-  text-align: $text-align;
-  padding: $padding;
-  background: $bg;
-  opacity:$opac;
-  border-radius: $border-rad;
-  margin: $margin;
-}
-@mixin hover($transparent,$transition-duration){
-  &:hover{
-    opacity: $transparent;
-    transition: $transition-duration;
-  }
-}
-@mixin hover-interchange($transparent,$transition-duration){
-  &:hover{
-    opacity: $transparent;
-    transition: $transition-duration;
-  }
-}
-//sass
 body{
-	background-color: $dark-orange !important;
+	background: #994d00 !important;
    
 }
 
 h1{
-	 font-family: $font-regular !important;
-  color:$skin-color !important;
-  font-size: $h1-size !important;
+	 font-family: 'Freckle Face', cursive !important;
+  color:#ffe6cc !important;
+  font-size:30pt !important;
 }
-
+.wiki{
+	padding:60px;
+}
 .result
 {
   max-width: auto;
@@ -60,15 +23,30 @@ h1{
   background: none;
   border-radius: 50px 0px;
   margin: 50px;
-  font-family: $font-regular;
-  color: $font-color;
+  font-family: 'Freckle Face', cursive;
+  color:black;
 
 }
 
+.searchBar{
+	margin-left:500px;
+	font-family: 'Nothing You Could Do', cursive;
+}
 .container-currency
 {
-  @include regular-container($regular-container-properties...);
-  @include hover($opacity-after,$transition-dur);
+  
+  max-width: auto;
+  max-height:auto;
+  text-align: center;
+  padding: 30px;
+  background: white;
+  opacity:0.6;
+  border-radius: 50px 50px;
+  margin: 15px;
+  &:hover{
+    opacity:0.9;
+    transition:1s;
+  }
   .container-each{
   display: inline-block;
   max-width: auto;
@@ -78,26 +56,39 @@ h1{
   background: white;
   border-radius: 50px 50px;
   margin: 1px;
-  font-family:$currency-font;
+  font-family:'Calibri';
   }
   h1{
-  color: $font-color !important;
+  color:black !important;
   text-align:center;
 }
 }
 .container-converter
 { 
-@include regular-container($regular-container-properties...);
- @include hover($opacity-after,$transition-dur);
+  max-width: auto;
+  max-height:auto;
+  text-align: center;
+  padding: 30px;
+  background: white;
+  opacity:0.6;
+  border-radius: 50px 50px;
+  margin: 15px;
+  &:hover{
+    opacity:0.9;
+    transition:1s;
+  }
   .value{
   font-size: 16pt;
-  transition:$transition-dur;
-  color: $font-color;
+  transition:1s;
+  color: black;
 }
 #interchange{
   text-decoration:none;
   cursor:pointer;
-@include hover($opacity-hover-interchange,$transition-dur);
+  &:hover{
+    opacity:0.5;
+    transition:1s;
+  }
 }
 .form-control{
   width:220px !important;
@@ -113,10 +104,10 @@ footer{
    bottom:0px;
    height:30px;
    width:100%;
-   background:$footer-bg; 
+   background:#662900; 
   border:none;
-  color:$footer-nav-font-color;
-	font-family: $nav-footer-font;
+  color:#ffffff;
+	font-family: 'Nothing You Could Do', cursive;
 	font-size:15px;
 	text-align:center;
 }
@@ -126,7 +117,7 @@ nav {
   width: auto;
   background: #662900;
   font-size: 11pt;
-  font-family: $nav-footer-font;
+  font-family: 'Nothing You Could Do', cursive;
   font-weight: bold;
   position: relative;
   border-bottom: 2px solid #662900;
@@ -140,7 +131,7 @@ nav {
     float: left;
   }
   a {
-    color: $footer-nav-font-color;
+    color: #fff;
     display: inline-block;
     width: 100px;
     text-align: center;
@@ -161,7 +152,7 @@ nav {
     &:hover, &:active {
       background-color:  #ffd1b3;
       color: #fff;
-      transition:$transition-dur;
+      transition:1s;
     }
    
   }
@@ -181,9 +172,26 @@ nav {
   margin-top: 40px;
 
 }
+.searchBar{
+	margin-left:0px;
 }
 
+
+}
+
+
+
+
+@media only screen and (max-width: 1024px) {
+	.searchBar{
+	margin-left:200px;
+}
+
+}
 @media only screen and (max-width: 768px) {
+	.searchBar{
+	margin-left:130px;
+}	
 .result
 {
   max-width: auto;
@@ -197,6 +205,9 @@ nav {
 }	
 }
 @media only screen and (max-width: 640px) {
+		.searchBar{
+	margin-left:50px;
+}	
 .result
 {
   max-width: auto;
@@ -210,6 +221,9 @@ nav {
 }	
 }
 @media only screen and (max-width: 360px) {
+		.searchBar{
+	margin-left:50px;
+}	
 .result
 {
   max-width: auto;
@@ -221,6 +235,16 @@ nav {
   margin: 4px;
 
 }
+}
+@media only screen and (max-width: 800px) {
+		.searchBar{
+	margin-left:50px;
+}	
+}
+@media only screen and (width: 1280px) {
+		.searchBar{
+	margin-left:260px;
+}	
 }
 @media only screen and (width: 900px) {
 .result

@@ -126,7 +126,7 @@ app.controller('MainCtrl', ['$scope','$http','currencies','euroexchange','usdexc
     $scope.amount;
     
    $scope.convert=$scope.from.slice(0,3) +"_"+$scope.to.slice(0,3);
-   $http.get("https://crossorigin.me/http://free.currencyconverterapi.com/api/v3/convert?q="+$scope.convert+"&compact=y")
+   $http.get("http://cors-anywhere.herokuapp.com/http://free.currencyconverterapi.com/api/v3/convert?q="+$scope.convert+"&compact=y")
                                   .then(function(response) {
                                     $scope.numeric_value = ($scope.amount*eval("response.data."+$scope.convert+".val")).toFixed(5);
                                     if($scope.numeric_value !== "NaN"){
@@ -149,7 +149,7 @@ $scope.change = function() {
    $scope.from = $scope.curr2;
    $scope.to = $scope.curr;
    $scope.convert = $scope.curr2.slice(0,3)+"_"+$scope.curr.slice(0,3);
-      $http.get("https://crossorigin.me/http://free.currencyconverterapi.com/api/v3/convert?q="+$scope.convert+"&compact=y")
+      $http.get("http://cors-anywhere.herokuapp.com/http://free.currencyconverterapi.com/api/v3/convert?q="+$scope.convert+"&compact=y")
                                   .then(function(response) {
                                     $scope.numeric_value = ($scope.amount*eval("response.data."+$scope.convert+".val")).toFixed(5);
                                      if($scope.numeric_value !== "NaN"){

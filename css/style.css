@@ -1,12 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Nothing+You+Could+Do);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
 @import url(https://fonts.googleapis.com/css?family=Freckle+Face);
 body {
-  background-color: #994d00 !important; }
+  background: #994d00 !important; }
 
 h1 {
-  font-family: "Freckle Face", cursive !important;
+  font-family: 'Freckle Face', cursive !important;
   color: #ffe6cc !important;
   font-size: 30pt !important; }
+
+.wiki {
+  padding: 60px; }
 
 .result {
   max-width: auto;
@@ -16,8 +20,12 @@ h1 {
   background: none;
   border-radius: 50px 0px;
   margin: 50px;
-  font-family: "Freckle Face", cursive;
+  font-family: 'Freckle Face', cursive;
   color: black; }
+
+.searchBar {
+  margin-left: 500px;
+  font-family: 'Nothing You Could Do', cursive; }
 
 .container-currency {
   max-width: auto;
@@ -40,7 +48,7 @@ h1 {
     background: white;
     border-radius: 50px 50px;
     margin: 1px;
-    font-family: "Calibri"; }
+    font-family: 'Calibri'; }
   .container-currency h1 {
     color: black !important;
     text-align: center; }
@@ -80,8 +88,8 @@ footer {
   width: 100%;
   background: #662900;
   border: none;
-  color: white;
-  font-family: "Nothing You Could Do", cursive;
+  color: #ffffff;
+  font-family: 'Nothing You Could Do', cursive;
   font-size: 15px;
   text-align: center; }
 
@@ -90,7 +98,7 @@ nav {
   width: auto;
   background: #662900;
   font-size: 11pt;
-  font-family: "Nothing You Could Do", cursive;
+  font-family: 'Nothing You Could Do', cursive;
   font-weight: bold;
   position: relative;
   border-bottom: 2px solid #662900; }
@@ -102,7 +110,7 @@ nav {
     display: inline;
     float: left; }
   nav a {
-    color: white;
+    color: #fff;
     display: inline-block;
     width: 100px;
     text-align: center;
@@ -126,8 +134,17 @@ nav {
     padding: 0px;
     background: none;
     border-radius: 50px 0px;
-    margin-top: 40px; } }
+    margin-top: 40px; }
+
+  .searchBar {
+    margin-left: 0px; } }
+@media only screen and (max-width: 1024px) {
+  .searchBar {
+    margin-left: 200px; } }
 @media only screen and (max-width: 768px) {
+  .searchBar {
+    margin-left: 130px; }
+
   .result {
     max-width: auto;
     max-height: auto;
@@ -137,6 +154,9 @@ nav {
     border-radius: 50px 0px;
     margin: 80px; } }
 @media only screen and (max-width: 640px) {
+  .searchBar {
+    margin-left: 50px; }
+
   .result {
     max-width: auto;
     max-height: auto;
@@ -146,6 +166,9 @@ nav {
     border-radius: 50px 0px;
     margin: 10px; } }
 @media only screen and (max-width: 360px) {
+  .searchBar {
+    margin-left: 50px; }
+
   .result {
     max-width: auto;
     max-height: auto;
@@ -154,6 +177,12 @@ nav {
     background: none;
     border-radius: 50px 0px;
     margin: 4px; } }
+@media only screen and (max-width: 800px) {
+  .searchBar {
+    margin-left: 50px; } }
+@media only screen and (width: 1280px) {
+  .searchBar {
+    margin-left: 260px; } }
 @media only screen and (width: 900px) {
   .result {
     max-width: auto;
